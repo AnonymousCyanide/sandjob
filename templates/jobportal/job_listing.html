@@ -1,0 +1,63 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block content %}
+ 
+
+<main>
+
+    <!-- Hero Area Start-->
+    {% include 'jobportal/banner.html' %}
+    <!-- Hero Area End -->
+    <!-- Job List Area Start -->
+    <div class="job-listing-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <!-- Left content -->
+               
+                    <!-- Job Category Listing start -->
+                    
+                   {% include 'jobportal/job_filter.html' %}
+                   
+                    <!-- Job Category Listing End -->
+               
+                <!-- Right content -->
+                <div class="col-xl-9 col-lg-9 col-md-8">
+                    <!-- Featured_job_start -->
+                    <section class="featured-job-area">
+                        <div class="container">
+                            <!-- Count of Job list Start -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="count-job mb-35">
+                                        <span>{{job_count}} Jobs found</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Count of Job list End -->
+                            <!-- single-job-content -->
+                           
+                           
+                            <!-- single-job-content -->
+                           
+                          {% if job_count == 0 %}
+                                <h1>Oops! We don't have anything for you</h1>
+                          {% else %}
+                                {% for job in jobs %}
+                                {% include 'jobportal/job_item.html ' %}
+                                {% endfor %}
+                          {% endif %}
+                        </div>
+                    </section>
+                    <!-- Featured_job_end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Job List Area End -->
+    <!--Pagination Start  -->
+   
+    <!--Pagination End  -->
+    
+</main>
+
+{% endblock %}

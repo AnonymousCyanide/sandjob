@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="single-job-items mb-30">
+    <div class="job-items">
+        <div class="company-img">
+            <a href="#"><img src="{{job.company.logo.url}}" alt="{{job.company.name}}-img"></a>
+        </div>
+        <div class="job-tittle job-tittle2">
+            <a href="#">
+                <h4>{{job.name}}</h4>
+            </a>
+            <ul>
+                <li>{{job.company.name}}</li>
+                <li><i class="fas fa-map-marker-alt"></i>{{job.location}}</li>
+                <li>$3500 - $4000</li>
+            </ul>
+        </div>
+    </div>
+    <div class="items-link items-link2 f-right">
+        <a href="{{job.url}}" target="_blank">Go To Site</a>
+        <span>7 hours ago</span>
+    </div>
+</div>
